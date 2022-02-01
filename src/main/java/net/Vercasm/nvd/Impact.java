@@ -4,8 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
+import javax.validation.constraints.Null;
 
 
 @NoArgsConstructor
@@ -21,10 +23,12 @@ public class Impact{
 	@JsonProperty("baseMetricV2")
 	private BaseMetricV2 baseMetricV2;
 
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "base_metricV3_id", referencedColumnName = "id")
+	@Nullable //Fixes bug where CVSS is null, then makes all data null
+	@OneToOne(cascade=CascadeType.ALL, optional = true)
+	@JoinColumn( name = "base_metricV3_id", referencedColumnName = "id", nullable = true)
 	@JsonProperty("baseMetricV3")
 	private BaseMetricV3 baseMetricV3;
+
 
 	public Impact(BaseMetricV2 baseMetricV2,
 				  BaseMetricV3 baseMetricV3) {

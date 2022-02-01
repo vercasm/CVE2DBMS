@@ -17,12 +17,14 @@ public class BaseMetricV3{
 	private Long ID;
 
 	@JsonProperty("exploitabilityScore")
+	@Column(nullable = true)
 	private double exploitabilityScore;
 
 	@ManyToOne(cascade=CascadeType.ALL, targetEntity=CvssV3.class)
-	@JoinColumn
+	@JoinColumn(nullable = true)
 	@JsonProperty("cvssV3")
 	private CvssV3 cvssV3;
+
 
 	@JsonProperty("impactScore")
 	private double impactScore;

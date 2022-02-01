@@ -1,4 +1,4 @@
-CREATE VIEW cve_collab_view AS
+CREATE TABLE cve_out AS (
 SELECT cve.id,  cve.cve_id, description_data_item.value as description, --configurations.id as configsID, cpe_uri.id as cpe_id, cveitems_item.cvedata_id,
 		cpe_uri.product as product, cvssv3.base_score as v3Base_score, cvssv2.base_score as v2base_score, cpe_match_item.version_end_excluding,
 		cpe_match_item.version_end_including, cpe_match_item.version_start_including, cpe_match_item.version_start_excluding,
@@ -35,9 +35,9 @@ SELECT cve.id,  cve.cve_id, description_data_item.value as description, --config
 			RIGHT JOIN cvssv2
 			ON (base_metricv2.cvssv2_id = cvssv2.id)
 			ORDER BY cve.cve_id ASC;
-
+)
 SELECT product, array_agg(description), unnest(array_agg(description))-- @@ to_tsquery('database' || 'sql')
-	FROM public.cve_collab_view
+	FROM public.cve_out
 	WHERE description IS NOT NULL
 			AND
 		  product NOT LIKE '-'
