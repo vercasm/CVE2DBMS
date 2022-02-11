@@ -15,16 +15,7 @@ import javax.persistence.*;
 @Table(name = "cve")
 public class Cve{
 
-	/*@SequenceGenerator(
-			name = "Cve_sequence",
-			sequenceName = "Cve_sequence",
-			allocationSize = 1
-	)
-	@Id
-	@GeneratedValue(
-			strategy = GenerationType.SEQUENCE,
-			generator = "Cve_sequence"
-	)*/
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", updatable = false, nullable = false)
@@ -33,10 +24,7 @@ public class Cve{
 	@JsonProperty("data_format")
 	private String dataFormat;
 
-	//@OneToOne(cascade=CascadeType.ALL)
-	//@JoinColumn(name = "references_id", referencedColumnName = "id")
-	//@OneToOne
-	//@MapsId
+
 	@OneToOne(targetEntity= cve_References.class, cascade=CascadeType.ALL)
 	@JoinColumn(name = "references_id", referencedColumnName = "refID")
 	@JsonProperty("references")

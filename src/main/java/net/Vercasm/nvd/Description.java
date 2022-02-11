@@ -7,12 +7,15 @@ import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 
 @NoArgsConstructor
+
 @Entity
 public class Description{
 
@@ -44,4 +47,5 @@ public class Description{
 			"description_data = '" + descriptionData + '\'' + 
 			"}";
 		}
+
 }

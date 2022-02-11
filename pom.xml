@@ -19,6 +19,7 @@
 		<slf4jVersion>1.6.1</slf4jVersion>
 	</properties>
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -85,6 +86,12 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!--MicroMeter for Monitoring-->
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-bom</artifactId>
+			<version>1.8.1</version>
+		</dependency>
 
 	</dependencies>
 	<dependencyManagement>

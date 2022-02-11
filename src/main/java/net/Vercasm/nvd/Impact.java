@@ -18,6 +18,7 @@ public class Impact{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long ID;
 
+	@Nullable //Fixes bug where CVSS is null, then makes all data null
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "base_metricV2_id", referencedColumnName = "id")
 	@JsonProperty("baseMetricV2")

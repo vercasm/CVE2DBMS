@@ -24,10 +24,10 @@ public class getData {
     @GetMapping(value = "/{id}")
     public Optional<String> findbyID(@PathVariable final Long id) {
         return Optional.ofNullable(jsService.getCVEbyID(1L).getCVEItems().stream().findFirst().get().getCve().getCVEDataMeta().getCve_id());
-    } @PostMapping(value = "/pdata",
+    }
+    @PostMapping(value = "/pdata",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-
     public String addData(@RequestBody Root root){
         System.out.println("goodbye!");
        if( jsService.SaveData(root))

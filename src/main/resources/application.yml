@@ -5,14 +5,14 @@ server:
     include-binding-errors: always
 spring:
   application:
-    name: Vercasm-JSON-inserter-service
+    name: Vercasm-JSON-inserter-service #TODO: rename to 'Vercasm-ingest-engine' and make consistent
   cloud:
     consul:
       host: localhost
       port: 8500
       discovery:
-        instance-id: Vercasm-JSON-inserter-service
-        service-Name: Vercasm-JSON-inserter-service
+        instance-id: ${spring.application.name}
+        service-Name: ${spring.application.name}
         healthCheckPath: ${management.server.servlet.context-path}/health
         healthCheckInterval: 15s
   logging:
@@ -34,3 +34,8 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
