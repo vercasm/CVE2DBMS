@@ -23,8 +23,8 @@ spring:
 
   datasource:
    driver-class-name: org.postgresql.Driver
-   password: colonial
-   url: jdbc:postgresql://localhost:5433/Vercasm_Utils
+   password: YOUR-PASSWORD-HERE
+   url: jdbc:postgresql://localhost:5432/Vercasm_Utils
    username: postgres
   jpa:
     hibernate:

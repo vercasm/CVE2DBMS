@@ -29,9 +29,12 @@ public class getData {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public String addData(@RequestBody Root root){
-        System.out.println("goodbye!");
-       if( jsService.SaveData(root))
+
+       if( jsService.SaveData(root)){
+           root = null;
+           System.gc();
            return "true";
+       }
        else
            return "false";
 

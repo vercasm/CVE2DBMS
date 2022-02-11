@@ -44,6 +44,7 @@ public class nvdService {
 
                if(r != null) {
                     r = null;
+                    root = null;
                     System.gc();//calling the garbage collector.
                    return true;
                }

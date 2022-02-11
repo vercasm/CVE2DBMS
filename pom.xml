@@ -86,12 +86,6 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!--MicroMeter for Monitoring-->
-		<dependency>
-			<groupId>io.micrometer</groupId>
-			<artifactId>micrometer-bom</artifactId>
-			<version>1.8.1</version>
-		</dependency>
 
 	</dependencies>
 	<dependencyManagement>
