@@ -42,10 +42,15 @@ public class nvdService {
     public Boolean SaveData(Root root){
         Root r = nvdRootRepository.save(root);
 
-               if(r != null)
+               if(r != null) {
+                    r = null;
+                    System.gc();//calling the garbage collector.
                    return true;
-               else
+               }
+               else{
                    return false;
+               }
+
     }
 
     public Root getCVEbyID(Long id){
