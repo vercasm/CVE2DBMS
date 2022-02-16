@@ -6,6 +6,8 @@ server:
 spring:
   application:
     name: Vercasm-JSON-inserter-service #TODO: rename to 'Vercasm-ingest-engine' and make consistent
+  profiles:
+    active: dev
   cloud:
     consul:
       host: localhost
@@ -20,20 +22,6 @@ spring:
       name: "mysomeapplication.log"
     level:
       org.hibernate.SQL: debug
-
-  datasource:
-   driver-class-name: org.postgresql.Driver
-   password: YOUR-PASSWORD-HERE
-   url: jdbc:postgresql://localhost:5432/Vercasm_Utils
-   username: postgres
-  jpa:
-    hibernate:
-      ddl_auto: create-drop
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-    show-sql: true
 management:
   endpoints:
     web:
