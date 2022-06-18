@@ -10,10 +10,7 @@ import org.hibernate.annotations.Immutable;
 import org.hibernate.annotations.Subselect;
 import org.hibernate.annotations.Synchronize;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity(name = "cve_data")
@@ -61,12 +58,13 @@ import java.io.Serializable;
         "cvssv2"})
 @Getter
 @Setter
+@Immutable
 @NoArgsConstructor
 @ToString
 public class cveData {
 
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
     public String cve_id;
     @Column(length = 8192)
