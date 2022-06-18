@@ -2,7 +2,7 @@
 --RUN THIS TO GET MASTER TABLE
 CREATE TABLE cve_out AS (
 SELECT cve.id,  cve.cve_id, description_data_item.value as description, --configurations.id as configsID, cpe_uri.id as cpe_id, cveitems_item.cvedata_id,
-        cpe_uri.product as product, cvssv3.base_score as v3Base_score, cvssv2.base_score as v2base_score, cpe_match_item.version_end_excluding,
+        cpe_uri.product as product, cvssv3.base_score as v3Base_score, cvssv2.base_score  as v2base_score, cpe_match_item.version_end_excluding,
         cpe_match_item.version_end_including, cpe_match_item.version_start_including, cpe_match_item.version_start_excluding,
          cpe_uri.edition, cpe_uri.morefields, cpe_uri.part, cpe_uri.update, cpe_uri.vendor, cpe_uri.version, coalesce(cvssv3.base_score, cvssv2.base_score) as coalesce_score
             FROM public.cveitems_item

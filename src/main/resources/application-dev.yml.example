@@ -1,4 +1,4 @@
-### This is the productions settings file, use parts of it to create your own 'application-dev.yml' file in this directory.
+### This is the productions settings file, use parts of it to create your own 'application-prod.yml' file in this directory.
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -8,7 +8,7 @@ spring:
   jpa:
    show-sql: true
    hibernate:
-     ddl_auto: validate
+     ddl_auto: create-drop
    properties:
      hibernate:
        dialect: org.hibernate.dialect.PostgreSQLDialect

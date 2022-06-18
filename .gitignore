@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 resources/application-dev.yml
-
+resources/application-prod.yml
 ### STS ###
 .apt_generated
 .classpath

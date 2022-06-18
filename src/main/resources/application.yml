@@ -7,7 +7,7 @@ spring:
   application:
     name: Vercasm-JSON-inserter-service #TODO: rename to 'Vercasm-ingest-engine' and make consistent
   profiles:
-    active: dev
+    active: prod
   cloud:
     consul:
       host: localhost

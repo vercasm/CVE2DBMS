@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.logging.Logger;
 
@@ -25,19 +26,21 @@ public class nvdService {
     private final static String ID_NOT_FOUND_MSG =
             "CVE DATA WTH ID: %s NOT FOUND!";
 
-    @Autowired
-    private nvdCrudRepository nvdcrudrepo;
+
 
     @Autowired
     private nvdRootRepository nvdRootRepository;
 
+    /*
     @Autowired
     private CveRepository cveRepository;
 
     @Autowired
     private CveItemsItemRepository cveItemsItemRepository;
 
-
+    @Autowired
+    private nvdCrudRepository nvdcrudrepo;
+*/
 
     public Boolean SaveData(Root root){
         Root r = nvdRootRepository.save(root);
@@ -65,5 +68,14 @@ public class nvdService {
     }
 
     public void save(Root root) {
+    }
+
+    public  void DeleteALL(){
+        nvdRootRepository.deleteAll();
+    }
+
+    @Transactional
+    public void truncateRoot(){
+        nvdRootRepository.truncateRoot();
     }
 }
