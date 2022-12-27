@@ -1,4 +1,6 @@
 ## Creates LOCAL DB for CVE data, and allows import
+This service is responsible in taking in CVE JSON Data and importing them into a Relational Database Management System. We are using PostgreSQL. Most other solutions rely on NO-SQL. This solution provides and easy solution to clean data for Data Science and other Statistical work around the use of CVE data. 
+
 
 ## Requirements:
 
