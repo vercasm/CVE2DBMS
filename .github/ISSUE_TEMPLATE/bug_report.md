@@ -5,7 +5,7 @@ title: ''
 labels: ''
 assignees: ''
 
----
+--- 
 
 **Describe the bug**
 A clear and concise description of what the bug is.
@@ -23,16 +23,22 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
+**Desktop / Server (please complete the following information):**
+- OS: [e.g. iOS]
 - OS Version
+- Restful API [/v1/...]
+- JDK Version [e.g. 11, 17]
+
+
 Either
  - Browser [e.g. chrome, firefox]
  - Version [e.g. 103]
+ 
 Or:
 - Rest Program [e.g. Curl, Insomnia, Postman]
 
-- Restful API [/v1/...]
+
+
 
 
 
